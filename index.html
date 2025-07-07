@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jealousy - For Ameer 💚</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #d1e7d9; /* soft gentle green */
+    font-family: 'Comfortaa', cursive, sans-serif;
+    color: #2e4d31; /* dark green text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 520px;
+    background: rgba(255 255 255 / 0.9);
+    padding: 30px 25px 25px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(46,77,49,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+  .heart-emoji {
+    font-size: 64px;
+    line-height: 1;
+    margin: 0 auto 20px auto;
+    position: relative;
+    display: inline-block;
+  }
+  /* pulsating green glow behind the emoji */
+  .heart-emoji::before {
+    content: "💚";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+    z-index: -1;
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #2e4d31;
+  }
+  button {
+    background-color: #4a7c44;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #33592a;
+  }
+  #calmLoveContainer {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #2e4d31;
+    display: none;
+    user-select: none;
+  }
+  #calmLoveEmojis {
+    font-size: 2.8rem;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="content">
+  <h1>Hey babe,</h1>
+  <div class="heart-emoji" aria-hidden="true">💚</div>
+  <p id="message">
+    Hey love, jealousy can sneak in and make your mind spin with worry. But please know my heart is yours alone, and you mean the world to me. I’m here, always trusting and loving you deeply. When jealousy tries to cloud your thoughts, click the button — I’m sending calm, love, and all the green vibes to soothe you 💚🌿✨
+  </p>
+  <button id="calmLoveBtn">Here’s my love to calm you</button>
+
+  <div id="calmLoveContainer" aria-live="polite" role="alert">
+    <div id="calmLoveMessage">You are deeply loved and treasured 💚🌿✨</div>
+  </div>
+</div>
+
+<script>
+  const calmLoveBtn = document.getElementById('calmLoveBtn');
+  const calmLoveContainer = document.getElementById('calmLoveContainer');
+
+  calmLoveBtn.addEventListener('click', () => {
+    calmLoveContainer.style.display = 'block';
+    calmLoveBtn.disabled = true;
+    calmLoveBtn.style.cursor = 'default';
+    calmLoveBtn.style.backgroundColor = '#3b6b36';
+  });
+</script>
+
+</body>
+</html>
